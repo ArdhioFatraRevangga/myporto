@@ -6,7 +6,7 @@ import Footer from "../components/footer.astro";
 
 <BaseLayout title="Home - Ardhio Fatra Revangga Portfolio">
   <Navbar />
-  
+
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container hero-container">
@@ -23,10 +23,16 @@ import Footer from "../components/footer.astro";
         <a href="/project" class="cta-button">Explore My Projects</a>
       </div>
       <div class="hero-image">
-        <div class="image-placeholder">
-          <img src="/images/foto_profile.jpeg" alt="Ardhio Fatra Revangga Profile" />
-        </div>
-      </div>
+  <div class="image-placeholder">
+    <img src="/images/foto_profile.jpeg" alt="Ardhio Fatra Revangga Profile" />
+  </div>
+</div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <div class="name-box">
+      <h1 class="big-name">Ardhio Fatra Revangga</h1>
     </div>
   </section>
 
@@ -163,7 +169,7 @@ import Footer from "../components/footer.astro";
             </div>
 
             <!-- Database -->
-            <div class="tech-item">
+            <!-- <div class="tech-item">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
                 alt="MySQL"
@@ -178,7 +184,7 @@ import Footer from "../components/footer.astro";
                 class="tech-icon"
               />
               <span class="tech-name">SQL Server</span>
-            </div>
+            </div> -->
 
             <!-- Data Analysis -->
             <div class="tech-item">
@@ -197,7 +203,7 @@ import Footer from "../components/footer.astro";
               />
               <span class="tech-name">Excel</span>
             </div>
-            <div class="tech-item">
+            <!-- <div class="tech-item">
               <img src="/pdi.png" alt="Pentaho" class="tech-icon" />
               <span class="tech-name">Pentaho</span>
             </div>
@@ -208,7 +214,7 @@ import Footer from "../components/footer.astro";
                 class="tech-icon"
               />
               <span class="tech-name">PowerBI</span>
-            </div>
+            </div> -->
 
             <!-- Version Control & Tools -->
             <div class="tech-item">
@@ -648,5 +654,68 @@ import Footer from "../components/footer.astro";
         height: 400px;
       }
     }
+ 
+    /* SECTION BESAR (AREA HIJAU) */
+.name-section {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, rgba(59,130,246,0.15), transparent 70%);
+}
+
+/* BOX NAMA */
+.name-box {
+  width: 80%;
+  max-width: 900px;
+  padding: 30px 40px;
+
+  border-radius: 20px;
+  border: 1px solid rgba(59,130,246,0.4);
+
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.03);
+
+  box-shadow: 0 0 30px rgba(59,130,246,0.2);
+
+  text-align: center;
+}
+
+/* TEXT NAMA */
+.big-name {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: white;
+
+  text-shadow: 0 0 15px rgba(59,130,246,0.8);
+
+  animation: slideLeftRight 5s ease-in-out infinite;
+}
+.name-box::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  margin: 15px auto 0;
+
+  background: linear-gradient(to right, transparent, #3b82f6, transparent);
+}
+
+/* animasi */
+@keyframes fadeUpName {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* GERAK KANAN KIRI */
+@keyframes slideLeftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(25px);
+  }
+}
   </style>
 </BaseLayout>
